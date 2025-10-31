@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Input Data Kecamatan - Coboy Style</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Rye&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background: #fbe5b3;
+            margin: 0;
+            padding: 40px 0;
+            background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+        }
+
+        .cowboy-header-art {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .cowboy-svg {
+            width: 60px;
+            height: 52px;
+            display: inline-block;
+            vertical-align: bottom;
+            animation: cowboywave 1.8s infinite cubic-bezier(.5, .05, 1, .35);
+        }
+
+        @keyframes cowboywave {
+            0% {
+                transform: translateY(0);
+            }
+
+            30% {
+                transform: translateY(-12px) rotate(-2deg);
+            }
+
+            60% {
+                transform: translateY(0);
+            }
+
+            80% {
+                transform: translateY(-6px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            text-align: center;
+            font-family: 'Rye', cursive;
+            color: #9e572a;
+            letter-spacing: 4px;
+            font-size: 2.1rem;
+            margin-bottom: 14px;
+            text-shadow: 2px 2px 0 #fff9ed, 4px 4px 3px #98663b45;
+        }
+
+        form {
+            background: #fff9ed;
+            padding: 32px 30px 28px 30px;
+            max-width: 420px;
+            margin: 40px auto 0 auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px 0 rgba(80, 42, 6, .14);
+            border: 2.5px solid #ddb173;
+        }
+
+        label {
+            display: block;
+            margin-top: 18px;
+            font-family: 'Rye', cursive;
+            color: #7a4b22;
+            font-size: 1.13rem;
+            letter-spacing: 1px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 7px 12px;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: 2px solid #dab182;
+            margin-top: 5px;
+            background: #f9f2e1;
+            color: #654321;
+            font-size: 1em;
+        }
+
+        input[type="submit"] {
+            background: #98663b;
+            color: #fff;
+            padding: 11px 35px;
+            border: none;
+            margin-top: 26px;
+            border-radius: 7px;
+            cursor: pointer;
+            font-family: 'Rye', cursive;
+            font-size: 1.08em;
+            font-weight: bold;
+            box-shadow: 1px 1px 0 #d6ba8b;
+            transition: background .15s;
+            letter-spacing: 2px;
+        }
+
+        input[type="submit"]:hover {
+            background: #d99265;
+            color: #222;
+        }
+
+        .link-tabel {
+            display: block;
+            text-align: center;
+            margin-top: 24px;
+            color: #b28030;
+            font-weight: bold;
+            font-family: 'Rye', cursive;
+            font-size: 1.1rem;
+            text-decoration: none;
+        }
+
+        .link-tabel:hover {
+            text-decoration: underline;
+            color: #9e572a;
+        }
+
+        .about-cowboy {
+            text-align: center;
+            margin-top: 38px;
+            font-family: 'Rye', cursive;
+            color: #b28030;
+            font-size: 1.03em;
+            letter-spacing: 1.1px;
+        }
+
+        @media (max-width: 650px) {
+            form {
+                max-width: 98vw;
+            }
+
+            input[type="text"],
+            input[type="number"] {
+                font-size: 0.96em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cowboy-header-art">
+        <svg class="cowboy-svg" viewBox="0 0 90 80">
+            <ellipse cx="45" cy="74" rx="30" ry="6" fill="#e3bb8b" opacity="0.3" />
+            <circle cx="45" cy="35" r="24" fill="#a05719" />
+            <ellipse cx="45" cy="30" rx="15" ry="9" fill="#f8dec5" />
+            <rect x="39" y="8" width="12" height="28" rx="6" fill="#4c3717" />
+            <rect x="36" y="34" width="18" height="10" rx="5" fill="#633c1b" />
+            <ellipse cx="45" cy="14" rx="10" ry="9" fill="#eec884" />
+            <rect x="40" y="52" width="10" height="18" rx="4" fill="#a05719" />
+            <rect x="32" y="64" width="8" height="10" rx="3" fill="#71532b" />
+            <rect x="50" y="64" width="8" height="10" rx="3" fill="#71532b" />
+        </svg>
+    </div>
+
+    <h2>Form Input Kecamatan</h2>
+    <form action="input.php" method="post" autocomplete="off">
+        <label>Kecamatan:
+            <input type="text" name="kecamatan" required>
+        </label>
+        <label>Longitude:
+            <input type="text" name="longitude" required placeholder="Contoh: 110.3011">
+        </label>
+        <label>Latitude:
+            <input type="text" name="latitude" required placeholder="Contoh: -7.7825">
+        </label>
+        <label>Luas (km&sup2;):
+            <input type="number" name="luas" step="any" required min="0" placeholder="Contoh: 37.50">
+        </label>
+        <label>Jumlah Penduduk:
+            <input type="number" name="jumlah_penduduk" step="1" required min="0">
+        </label>
+        <input type="submit" value="➽ SIMPAN">
+    </form>
+    <a class="link-tabel" href="../index.php">« Lihat Data Tabel Kecamatan</a>
+    <div class="about-cowboy">
+        <hr style="margin:36px 0 15px 0;height:2px;border:none;background:#dab182;">
+        <div>
+            <span style="font-family:'Rye',cursive;font-size:1.15em;color:#98663b">About:</span><br>
+            <span style="font-family:'Rye',cursive;color:#654321;font-size:1.03em;">
+                Nuha Nihaya Shafa
+            </span><br>
+            <span style="font-family:Roboto,Arial;color:#b28030;">NIM: 24/545410/SV/25677</span>
+        </div>
+    </div>
+    <div style="text-align:center; margin-bottom:16px;">
+        <button id="show-map-btn"
+            style="background:#98663b;color:#fff;padding:10px 32px;font-family:'Rye',cursive;font-size:1.08em;border-radius:8px;cursor:pointer;border:none;box-shadow:1px 1px 0 #d6ba8b;">
+            Click Map
+        </button>
+    </div>
+    <div id="map-modal"
+        style="display:none;position:fixed;z-index:1000;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.4)">
+        <div
+            style="position:relative;width:85vw;max-width:700px;background:#fff9ed;margin:60px auto 0 auto;box-shadow:0 4px 24px #44280654;border-radius:16px;padding:24px;">
+            <div style="text-align:right;margin-bottom:4px;">
+                <button onclick="closeMap()"
+                    style="background:#98663b;color:#fff;padding:7px 17px;border-radius:6px;font-family:'Rye',cursive;font-size:1em;border:none;cursor:pointer;">Close</button>
+            </div>
+            <div id="daftarMap" style="width:100%;height:400px;border-radius:10px;"></div>
+        </div>
+    </div>
+    <!-- Leaflet CSS & JS CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script>
+        function closeMap() {
+            document.getElementById('map-modal').style.display = "none";
+        }
+        // Show Map on click
+        document.addEventListener("DOMContentLoaded", function () {
+            var mapInited = false;
+            document.getElementById("show-map-btn").onclick = function () {
+                document.getElementById("map-modal").style.display = "block";
+                if (!mapInited) {
+                    // Inisialisasi map sekali saja
+                    var map = L.map('daftarMap').setView([-7.8, 110.3], 11); // Koordinat Yogya/Indonesia
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '© OpenStreetMap'
+                    }).addTo(map);
+                    // Tambahkan marker di sini sesuai kebutuhan (API/DB)
+                    // Contoh dummy marker
+                    L.marker([-7.7896, 110.3626]).addTo(map).bindPopup('Contoh Marker 1');
+                    L.marker([-7.8014, 110.3647]).addTo(map).bindPopup('Contoh Marker 2');
+                    mapInited = true;
+                }
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>

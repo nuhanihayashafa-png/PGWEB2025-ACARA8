@@ -155,6 +155,23 @@
             background: #af5635;
         }
 
+        .edit-link {
+            color: #fff;
+            background: #4CAF50;
+            font-family: 'Rye', cursive;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 4px 13px;
+            border-radius: 4px;
+            transition: background .15s;
+            border: 1px solid #388E3C;
+            margin-left: 8px;
+        }
+
+        .edit-link:hover {
+            background: #45a049;
+        }
+
         .about-cowboy {
             text-align: center;
             margin-top: 40px;
@@ -339,6 +356,7 @@
             <td>" . $row['luas'] . "</td>
             <td align='right'>" . $row['jumlah_penduduk'] . "</td>
             <td>
+                <a class='edit-link' href='edit.php?id=" . $row['id'] . "'>Edit</a>
                 <a class='hapus-link' href='delete.php?id=" . $row['id'] . "' onclick=\"return confirm('Yakin hapus data ini?')\">Hapus</a>
             </td>
         </tr>";

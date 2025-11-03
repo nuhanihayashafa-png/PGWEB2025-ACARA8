@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 header('Content-Type: text/csv');
 header('Content-Disposition: attachment;filename=daftar_kecamatan.csv');
 $conn = new mysqli("localhost", "root", "", "pgweb_acara8");
